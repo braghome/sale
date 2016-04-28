@@ -16,7 +16,7 @@ class SalesOperations {
 	}
 	
 	def List<Sale> youngestPerson(List<Person> persons, List<Sale> sales) {
-		val youngest = persons.reduce[p1, p2| if (p1.age < p2.age) p2 else p1] 
+		val youngest = persons.reduce[p1, p2| if (p1.age < p2.age) p1 else p2] 
 							?: new Person("the one", "one only", 1, true)
 		val buys = new ArrayList<Sale>()
 		buys.addAll(sales.filter[youngest == buyer].toList)
