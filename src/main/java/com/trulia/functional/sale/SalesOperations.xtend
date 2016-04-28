@@ -20,7 +20,6 @@ class SalesOperations {
 							?: new Person("the one", "one only", 1, true)
 		val buys = new ArrayList<Sale>()
 		buys.addAll(sales.filter[youngest == buyer].toList)
-		// or we could add: buys.add(sales.findFirst[youngest == buyer])
 		return buys;
 	}
 }
