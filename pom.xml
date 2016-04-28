@@ -40,6 +40,22 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+			<plugin>
+					<groupId>org.eclipse.xtend</groupId>
+					<artifactId>xtend-maven-plugin</artifactId>
+					<version>${xtend.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>compile</goal>
+								<goal>testCompile</goal>
+							</goals>
+							<configuration>
+								<testSourceDirectory>${project.build.testSourceDirectory}/generated-sources/xtend</testSourceDirectory>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
 		</plugins>
 	</build>
 </project>
