@@ -1,6 +1,5 @@
 package com.trulia.functional.sale
 
-import java.util.ArrayList
 import java.util.List
 
 class SalesOperations {
@@ -9,17 +8,12 @@ class SalesOperations {
 	}
 
 	def List<Sale> collectBrands(String brandfilt, List<Sale> sales) {
-		val salesOfAPrius = new ArrayList<Sale>()
-		salesOfAPrius.addAll(
-			sales.filter[car.brand == brandfilt].toList);
-		return salesOfAPrius
+		sales.filter[car.brand == brandfilt].toList
 	}
 	
 	def List<Sale> youngestPerson(List<Person> persons, List<Sale> sales) {
 		val youngest = persons.reduce[p1, p2| if (p1.age < p2.age) p1 else p2] 
 							?: new Person("the one", "one only", 1, true)
-		val buys = new ArrayList<Sale>()
-		buys.addAll(sales.filter[youngest == buyer].toList)
-		return buys;
+		sales.filter[youngest == buyer].toList
 	}
 }
